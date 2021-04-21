@@ -159,9 +159,7 @@ test('abort request', async () => {
   await server.close();
 });
 
-// FIXME Don't know why: it does not work most probably because of Playwright (1.6.1)
-// eslint-disable-next-line jest/no-disabled-tests
-test.skip('HTTPS + HTTP/2', async () => {
+test('HTTPS + HTTP/2', async () => {
   const server = createTestServer({ https: true, http2: true });
 
   server.get(path, (request, reply) => {
